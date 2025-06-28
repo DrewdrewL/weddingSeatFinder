@@ -282,7 +282,7 @@ if selected_guest:
     selected_table = guest_table_map[selected_guest]
     
     st.write(f"**Your table is now highlighted in yellow**")
-    st.write(f"**{selected_guest} is seated at Table {selected_table} with:**")
+    st.write(f"{selected_guest} is seated at **Table {selected_table}** with:")
     #print out all the guests at the selected table
     guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
     st.write(" || ".join(guests_at_table))
