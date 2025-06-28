@@ -214,7 +214,7 @@ rectangle_positions ={
 #st.set_page_config(layout="wide")
 
 # Load background floor plan image
-#bg_image = Image.open("Floorplan8.png").convert("RGBA")  # Replace with your image
+#bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
     return Image.open("Floorplan8.png").convert("RGBA")
@@ -228,7 +228,7 @@ st.title("Andrew and Sheryl 🥂")
 #matches = [name for name in guest_table_map if guest.lower() in name.lower()]
 
 #if matches:
-selected_guest = st.selectbox("Search for a guest", [name for name in guest_table_map])
+selected_guest = st.selectbox("Enter your name to find your seat!", [name for name in guest_table_map])
 #else:
  #   selected_guest = None
 
