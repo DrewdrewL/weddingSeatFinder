@@ -166,7 +166,7 @@ guest_table_map = {
     "Zen Sze": 17,
     "Anzelle Lee": 17,
     "Victor Tan Zuu Yuaan": 17,
-    "Justin Gay-Foo": 17,
+    "Justin Google Maps Foo": 17,
     ####################################
     "Willie Quek": 18,
     "Fiona Quek": 18,
