@@ -1,9 +1,8 @@
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 
-
 # ========== CONFIG ==========
-# Sample guest -> table mapping
+
 guest_table_map = {
     "-" : 0,
     ####################################
@@ -201,7 +200,7 @@ guest_table_map = {
     "Roland Goh": 25,
 
 }
-# Table positions (x, y) in image coordinates
+
 table_positions = {
     1: (130, 551),
     6: (454, 403),
@@ -227,9 +226,7 @@ rectangle_positions ={
     16: (410, 901),
     17: (680, 901),
 }
-#st.set_page_config(layout="wide")
 
-# Load background floor plan image
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
@@ -238,15 +235,7 @@ def load_bg_image():
 bg_image = load_bg_image()
 # ========== UI ==========
 st.title("Andrew and Sheryl 🥂")
-#guest = st.text_input("Search for a guest", "")
-
-# Filter matches
-#matches = [name for name in guest_table_map if guest.lower() in name.lower()]
-
-#if matches:
 selected_guest = st.selectbox("Enter your name to find your seat!", [name for name in guest_table_map])
-#else:
- #   selected_guest = None
 
 # ========== IMAGE DRAWING ==========
 if selected_guest:
@@ -267,14 +256,12 @@ if selected_guest:
         radius = 55
         fill = "yellow" if table_num == selected_table else None
         draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
-        #draw.text((x , y ), f"{table_num}", fill="black", align="center",fontsize=20)
 
     # Draw rectangles for rectangle positions
     for table_num, (x, y) in rectangle_positions.items():
         width, height = 270, 65
         fill = "yellow" if table_num == selected_table else None
         draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
-        #draw.text((x , y ), f"{table_num}", fill="black", align="center",fontsize=20)
 
     st.image(img)
 else:
