@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 # Sample guest -> table mapping
 guest_table_map = {
     "-" : 0,
+    ####################################
     "Aldrin Lee": 1,
     "Audrey Chan": 1,
     "Sheryl (The Bride)": 1,
@@ -16,6 +17,7 @@ guest_table_map = {
     "Terry Koh": 1,
     "Andrea Lee": 1,
     "Theodore Koh": 1,
+    ####################################
     "Simon Ang": 2,
     "Josephine Teng": 2,
     "Doreen Tan": 2,
@@ -26,6 +28,7 @@ guest_table_map = {
     "Christine Tang": 2,
     "Mark Tin": 2,
     "Elaine Chua": 2,
+    ####################################
     "Elvin Lee": 3,
     "Katherine Heng": 3,
     "Natalie Lee": 3,
@@ -35,6 +38,7 @@ guest_table_map = {
     "Alwin Lee": 3,
     "Mavis Chan": 3,
     "Serene Lee": 3,
+    ####################################
     "Palvin Chan": 6,
     "Melynda Cheng": 6,
     "Oliver Chan": 6,
@@ -45,17 +49,18 @@ guest_table_map = {
     "Peter Teo": 6,
     "Tua Kng": 6,
     "Mrs Han": 6,
+    ####################################
     "Will Woon": 9,
     "Luna Xiong": 9,
     "Nicole Tan": 9,
     "Markus Yuen": 9,
     "Chermaine Goh": 9,
-    "Benjamin Ang": 10,
     "Fonzarelli Ong": 9,
     "Joyce Skidell": 9,
     "Min Siang Loy": 9,
     "Jin Hong Ng": 9,
     "Jit Yong Ang": 9,
+    ####################################
     "Cassandra Hesler": 10,
     "Bradley Goh": 10,
     "Jin Wei Krishnan": 10,
@@ -66,6 +71,7 @@ guest_table_map = {
     "Abhishek Choudhary": 10,
     "Wayne Toh": 10,
     "Jonathan Raharja": 10,
+    ####################################
     "Makarios Tang": 12,
     "Xinyi Low": 12,
     "Edna Chah": 12,
@@ -79,6 +85,7 @@ guest_table_map = {
     "Vian Wee": 12,
     "Marcus Guo": 12,
     "Lettitia Quack": 12,
+    ####################################
     "Weilun Gan": 15,
     "Kelly Tng": 15,
     "Whitney David": 15,
@@ -92,6 +99,7 @@ guest_table_map = {
     "Melanie Koh": 15,
     "Lay Shuen Kwek": 15,
     "Maryam Mohammed": 15,
+    ####################################
     "Rikki Sim": 16,
     "Trisa Tin": 16,
     "Daryl Ang": 16,
@@ -106,6 +114,7 @@ guest_table_map = {
     "Charlene (Brandon)": 16,
     "Ivan Tin": 16,
     "Marcus Tin": 16,
+    ####################################
     "Kelly Ha": 17,
     "Tania Tan": 17,
     "Zen Sze": 17,
@@ -119,6 +128,7 @@ guest_table_map = {
     "Anzelle Lee": 17,
     "Victor Tan Zuu Yuaan": 17,
     "Justin Foo": 17,
+    ####################################
     "Willie Quek": 18,
     "Fiona Quek": 18,
     "Shirley Quek": 18,
@@ -129,6 +139,7 @@ guest_table_map = {
     "Jonathan Tin": 18,
     "Justin Tin": 18,
     "Johanson Tin": 18,
+    ####################################
     "3rd Uncle (Simon's side)": 19,
     "3rd Uncle's Wife (Simon's side)": 19,
     "4th Uncle (Simon)": 19,
@@ -137,6 +148,7 @@ guest_table_map = {
     "Francis Soon": 19,
     "William Tan": 19,
     "Michelle Tan": 19,
+    ####################################
     "Maryam (Sheryl)": 20,
     "Wati (Sheryl)": 20,
     "Annie Leung": 20,
@@ -147,6 +159,7 @@ guest_table_map = {
     "4th Uncle's Wife (Josephine)": 20,
     "3rd Uncle (Josephine)": 20,
     "3rd Uncle's Wife (Josephine)": 20,
+    ####################################
     "James Tan": 21,
     "Sharon Tan": 21,
     "Daniel Kwan": 21,
@@ -156,6 +169,7 @@ guest_table_map = {
     "Sherrie Chua": 21,
     "Karen Tan": 21,
     "Kenneth Tan": 21,
+    ####################################
     "Lorraine Tay": 22,
     "Peter Tay": 22,
     "Willie Liam": 22,
@@ -165,6 +179,7 @@ guest_table_map = {
     "Lawrence Chan": 22,
     "Mr Adrian Tee": 22,
     "Mrs Adrian Tee": 22,
+    ####################################
     "John Ow": 23,
     "Aloysius Yang": 23,
     "Yelun Yang": 23,
@@ -175,6 +190,7 @@ guest_table_map = {
     "Cassius Kua": 23,
     "Quinn Wong": 23,
     "Ethan Sun": 23,
+    ####################################
     "Sean Neighbour": 25,
     "Sean Wife": 25,
     "Opposite Neighbour": 25,
