@@ -6,7 +6,6 @@ from PIL import Image, ImageDraw, ImageFont
 # Sample guest -> table mapping
 guest_table_map = {
     "-" : 0,
-    "Andrew Slayer":1,
     "Simon Ang": 1,
     "Josephine Teng": 1,
     "Doreen Tan": 1,
