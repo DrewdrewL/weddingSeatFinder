@@ -236,7 +236,7 @@ guest_table_map = {
     "Opposite Neighbour Wife": 25,
     "Edgar Tan": 25,
     "Margaret Tan": 25,
-    "Mollie Goh": 25,
+    "Molly Goh": 25,
     "Roland Goh": 25,
 
 }
