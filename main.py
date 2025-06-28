@@ -214,8 +214,12 @@ rectangle_positions ={
 #st.set_page_config(layout="wide")
 
 # Load background floor plan image
-bg_image = Image.open("Floorplan8.png").convert("RGBA")  # Replace with your image
+#bg_image = Image.open("Floorplan8.png").convert("RGBA")  # Replace with your image
+@st.cache_resource
+def load_bg_image():
+    return Image.open("Floorplan8.png").convert("RGBA")
 
+bg_image = load_bg_image()
 # ========== UI ==========
 st.title("Andrew and Sheryl 🥂")
 #guest = st.text_input("Search for a guest", "")
