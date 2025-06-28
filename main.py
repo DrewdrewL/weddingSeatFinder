@@ -231,14 +231,13 @@ selected_guest = st.selectbox("Search for a guest", [name for name in guest_tabl
 # ========== IMAGE DRAWING ==========
 if selected_guest:
     selected_table = guest_table_map[selected_guest]
-    try:
-        st.write(f"**Your table is now highlighted in yellow**")
-        st.write(f"**{selected_guest} is seated at Table {selected_table} with:**")
-        #print out all the guests at the selected table
-        guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
-        st.write(" || ".join(guests_at_table))
-    except:
-        pass
+    
+    st.write(f"**Your table is now highlighted in yellow**")
+    st.write(f"**{selected_guest} is seated at Table {selected_table} with:**")
+    #print out all the guests at the selected table
+    guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
+    st.write(" || ".join(guests_at_table))
+    
     # Draw over a copy of the image
     img = bg_image.copy()
     draw = ImageDraw.Draw(img)
