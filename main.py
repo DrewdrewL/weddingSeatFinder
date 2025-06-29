@@ -321,19 +321,16 @@ if selected_guest:
     img = bg_image.copy()
     draw = ImageDraw.Draw(img)
 
-    # Draw all tables
-    with st.spinner("Finding your seat..."):
+    for table_num, (x, y) in table_positions.items():
+        radius = 55
+        fill = "yellow" if table_num == selected_table else None
+        draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
 
-        for table_num, (x, y) in table_positions.items():
-            radius = 55
-            fill = "yellow" if table_num == selected_table else None
-            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
-
-        # Draw rectangles for rectangle positions
-        for table_num, (x, y) in rectangle_positions.items():
-            width, height = 270, 32.5
-            fill = "yellow" if table_num == selected_table else None
-            draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
+    # Draw rectangles for rectangle positions
+    for table_num, (x, y) in rectangle_positions.items():
+        width, height = 270, 32.5
+        fill = "yellow" if table_num == selected_table else None
+        draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
 
     st.image(img)
 else:
