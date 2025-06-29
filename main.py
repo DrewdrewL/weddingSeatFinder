@@ -41,11 +41,11 @@ guest_table_map = {
     "Casey Chan": 5,
     "Sandra Chan": 5,
     "Marc Chan": 5,
-    "Cheyenne": 5,
+    "Cheyenne Chan": 5,
     "Mae Chan": 5,
-    "Ah Moh": 5,
+    "Mdm Koh": 5,
     "Colin Chan": 5,
-    "Luan hua": 5,
+    "Luan Hua Chan": 5,
     "Collette Chan": 5,
     ####################################
     "Palvin Chan": 6,
@@ -57,27 +57,28 @@ guest_table_map = {
     "Stephanie Teo": 6,
     "Peter Teo": 6,
     "Tua Kng": 6,
-    "Mrs Han": 6,
     ####################################
     "Nelson Koh": 7,
-    "Terry’s mom": 7,
+    "Noven Koh": 7,
     "AD Chan": 7,
-    "Carol": 7,
+    "Carol Eguaras": 7,
     "Ali Al Kuwari": 7,
     "Marlian GW": 7,
     "Matthew Lee": 7,
     "Nicholas Lee": 7,
+    "Han Mian Hwee": 7,
+    "Lee Choo": 7,
     ####################################
     "Mr Teh": 8,
     "Mrs Teh": 8,
-    "Peijing": 8,
-    "Chee Huey": 8,
-    "Liming": 8,
+    "Teh Peijing": 8,
+    "Teh Chee Huey": 8,
+    "Teh Liming": 8,
     "Nell": 8,
     "Liming Daughter 1": 8,
     "Liming Daughter 2": 8,
-    "Diana": 8,
-    "Diana Husband": 8,
+    "Diana Pang": 8,
+    "Steven Pang": 8,
     ####################################
     "Will Woon": 10,
     "Luna Xiong": 10,
@@ -301,7 +302,7 @@ font = ImageFont.truetype("ARIALBD.TTF", 50)
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
-    return Image.open("Floorplan10.png").convert("RGBA")
+    return Image.open("Floorplan11.png").convert("RGBA")
 
 bg_image = load_bg_image()
 # ========== UI ==========
