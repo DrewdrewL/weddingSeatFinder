@@ -311,31 +311,30 @@ selected_guest = st.selectbox("Enter your name to find your seat!", [name for na
 
 # ========== IMAGE DRAWING ==========
 if selected_guest:
-    with st.spinner("Checking..."):
-        selected_table = guest_table_map[selected_guest]
-        
-        st.write(f"**Your table is now highlighted in yellow**")
-        st.write(f"{selected_guest} is seated at **[Table {selected_table}]** with:")
-        #print out all the guests at the selected table
-        guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
-        st.write(" || ".join(guests_at_table))
-        
-        # Draw over a copy of the image
-        img = bg_image.copy()
-        draw = ImageDraw.Draw(img)
+    selected_table = guest_table_map[selected_guest]
+    
+    st.write(f"**Your table is now highlighted in yellow**")
+    st.write(f"{selected_guest} is seated at **[Table {selected_table}]** with:")
+    #print out all the guests at the selected table
+    guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
+    st.write(" || ".join(guests_at_table))
+    
+    # Draw over a copy of the image
+    img = bg_image.copy()
+    draw = ImageDraw.Draw(img)
 
-        # Draw all tables
-        for table_num, (x, y) in table_positions.items():
-            radius = 55
-            fill = "yellow" if table_num == selected_table else None
-            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
+    # Draw all tables
+    for table_num, (x, y) in table_positions.items():
+        radius = 55
+        fill = "yellow" if table_num == selected_table else None
+        draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
 
-        # Draw rectangles for rectangle positions
-        for table_num, (x, y) in rectangle_positions.items():
-            width, height = 270, 32.5
-            fill = "yellow" if table_num == selected_table else None
-            draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
+    # Draw rectangles for rectangle positions
+    for table_num, (x, y) in rectangle_positions.items():
+        width, height = 270, 32.5
+        fill = "yellow" if table_num == selected_table else None
+        draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
 
-        st.image(img)
+    st.image(img)
 else:
     st.image(bg_image)
