@@ -296,7 +296,8 @@ rectangle_positions ={
     "12B": (410, 898+32/2),
     "15B": (680, 898+32/2),
 }
-font = ImageFont.truetype("ARIALBD.ttf", 50)
+font = ImageFont.truetype("ARIALBD.TTF", 50)
+
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
