@@ -302,7 +302,7 @@ font = ImageFont.truetype("ARIALBD.TTF", 50)
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
-    return Image.open("Floorplan11.png").convert("RGBA")
+    return Image.open("Floorplan12a.png").convert("RGBA")
 
 bg_image = load_bg_image()
 # ========== UI ==========
@@ -316,7 +316,7 @@ if selected_guest:
         st.image(bg_image)    
     else:
         st.subheader(f"Please find your table highlighted in yellow")
-        st.markdown(f"{selected_guest}, you are seated at <u>Table {selected_table}</u> with:", unsafe_allow_html=True)
+        st.markdown(f"{selected_guest}, you are seated at <u>**Table {selected_table}**</u> with:", unsafe_allow_html=True)
         #print out all the guests at the selected table
         guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
         st.write("|| "+" || ".join(guests_at_table)+" ||")
