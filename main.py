@@ -142,15 +142,15 @@ guest_table_map = {
     "Trisa Tin": "16A",
     "Rikki Sim": "16A",
     "Brandon Sim": "16A",
-    "Glenn Ang": "16B",
-    "Julia Sim": "16B",
+    "Glenn Ang": "16A",
+    "Julia Sim": "16A",
     "Jamie Ang": "16B",
     "Ryan Ang": "16B",
     "Marcus Tin": "16B",
     "Ivan Tin": "16B",
     "Charlene (Brandon)": "16A",
-    "Jan Sim": "16A",
-    "Nesh (Jan)": "16A",
+    "Jan Sim": "16B",
+    "Nesh (Jan)": "16B",
     "Faith Lee": "16A",
     "Daryl Ang": "16A",
     ####################################
@@ -287,16 +287,16 @@ table_positions = {
     10: (911, 1062),
 }
 rectangle_positions ={
-    "16A": (410, 569-34/2),
-    "17A": (680, 569-34/2),
-    "12A": (410, 901-34/2),
-    "15A": (680, 901-34/2),
-    "16B": (410, 569+32/2),
-    "17B": (680, 569+32/2),
-    "12B": (410, 901+32/2),
-    "15B": (680, 901+32/2),
+    "16A": (410, 566-34/2),
+    "17A": (680, 566-34/2),
+    "12A": (410, 898-34/2),
+    "15A": (680, 898-34/2),
+    "16B": (410, 566+32/2),
+    "17B": (680, 566+32/2),
+    "12B": (410, 898+32/2),
+    "15B": (680, 898+32/2),
 }
-
+font = ImageFont.truetype("ARIALBD.ttf", 50)
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
@@ -325,14 +325,23 @@ if selected_guest:
 
         for table_num, (x, y) in table_positions.items():
             radius = 55
-            fill = "yellow" if table_num == selected_table else None
-            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
+            fill = "#FFD700" if table_num == selected_table else None
+            width = 2 if table_num == selected_table else 0
+            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="black",width=width)
+            #load arial.ttf font size 50
+            
+            if isinstance(table_num, int) and table_num == selected_table and table_num >= 10:
+                draw.text((x - radius + 25, y - radius + 25), str(table_num), fill="black", font=font) 
+            elif isinstance(table_num, int) and table_num == selected_table and table_num < 10:
+                draw.text((x - radius + 40, y - radius + 25), str(table_num), fill="black", font=font)
+            else:
+                pass
 
         # Draw rectangles for rectangle positions
         for table_num, (x, y) in rectangle_positions.items():
             width, height = 270, 32.5
-            fill = "yellow" if table_num == selected_table else None
-            draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
+            fill = "#FFD700" if table_num == selected_table else None
+            draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="white")
 
         st.image(img)
 else:
