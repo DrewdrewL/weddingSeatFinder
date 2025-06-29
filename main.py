@@ -111,62 +111,62 @@ guest_table_map = {
     "Nicholas Phang": 11,
     "Jarell Ang": 11,
     ####################################
-    "Travis Tseng": "12b",
-    "Christine Teo": "12b",
-    "Andrea Chong": "12a",
-    "Lim Main Ray": "12b",
-    "Ambrose Yew": "12a",
-    "Vian See": "12a",
-    "Makarios Tang": "12b",
-    "Wei Lun Gan": "12a",
-    "Marcus Guo": "12a",
-    "Janessa Yim": "12b",
-    "Alyssa Siow": "12b",
-    "Lettitia Quek": "12a",
-    "Edna Chah": "12b",
-    "Low Xin Yi": "12b",
+    "Travis Tseng": "12B",
+    "Christine Teo": "12B",
+    "Andrea Chong": "12A",
+    "Lim Main Ray": "12B",
+    "Ambrose Yew": "12A",
+    "Vian See": "12A",
+    "Makarios Tang": "12B",
+    "Wei Lun Gan": "12A",
+    "Marcus Guo": "12A",
+    "Janessa Yim": "12B",
+    "Alyssa Siow": "12B",
+    "Lettitia Quek": "12A",
+    "Edna Chah": "12B",
+    "Low Xin Yi": "12B",
     ####################################
-    "Kelly Thng": "15a",
-    "Claudia Lee": "15b",
-    "Rachel Ng": "15b",
-    "Trevor (Rachel)": "15b",
-    "Kai Qing": "15a",
-    "Shawn": "15a",
-    "Whitney David": "15a",
-    "Laurence Sukarti": "15a",
-    "Matthew Chia": "15a",
-    "Melanie Koh": "15b",
-    "Maryam Mohammed": "15b",
-    "Lay Shuen Kwek": "15b",
+    "Kelly Thng": "15A",
+    "Claudia Lee": "15B",
+    "Rachel Ng": "15B",
+    "Trevor (Rachel)": "15B",
+    "Kai Qing": "15A",
+    "Shawn": "15A",
+    "Whitney David": "15A",
+    "Laurence Sukarti": "15A",
+    "Matthew Chia": "15A",
+    "Melanie Koh": "15B",
+    "Maryam Mohammed": "15B",
+    "Lay Shuen Kwek": "15B",
     ####################################
-    "Trisa Tin": "16a",
-    "Rikki Sim": "16a",
-    "Brandon Sim": "16a",
-    "Glenn Ang": "16b",
-    "Julia Sim": "16b",
-    "Jamie Ang": "16b",
-    "Ryan Ang": "16b",
-    "Marcus Tin": "16b",
-    "Ivan Tin": "16b",
-    "Charlene (Brandon)": "16a",
-    "Jan Sim": "16a",
-    "Nesh (Jan)": "16a",
-    "Faith Lee": "16a",
-    "Daryl Ang": "16a",
+    "Trisa Tin": "16A",
+    "Rikki Sim": "16A",
+    "Brandon Sim": "16A",
+    "Glenn Ang": "16B",
+    "Julia Sim": "16B",
+    "Jamie Ang": "16B",
+    "Ryan Ang": "16B",
+    "Marcus Tin": "16B",
+    "Ivan Tin": "16B",
+    "Charlene (Brandon)": "16A",
+    "Jan Sim": "16A",
+    "Nesh (Jan)": "16A",
+    "Faith Lee": "16A",
+    "Daryl Ang": "16A",
     ####################################
-    "Angela Shenead": "17a",
-    "Cheryl Cheong": "17b",
-    "Tania Tan": "17a",
-    "Kelly Ha": "17a",
-    "Vanessa Ghui": "17a",
-    "Vera Lim": "17a",
-    "Izzah": "17a",
-    "Diane Tan": "17a",
-    "Jeneen Foo": "17b",
-    "Zen Sze": "17b",
-    "Anzelle Lee": "17b",
-    "Tan Zuu Yuaan @ Victor Tan": "17b",
-    "Justin Foo": "17b",
+    "Angela Shenead": "17A",
+    "Cheryl Cheong": "17B",
+    "Tania Tan": "17A",
+    "Kelly Ha": "17A",
+    "Vanessa Ghui": "17A",
+    "Vera Lim": "17A",
+    "Izzah": "17A",
+    "Diane Tan": "17A",
+    "Jeneen Foo": "17B",
+    "Zen Sze": "17B",
+    "Anzelle Lee": "17B",
+    "Tan Zuu Yuaan @ Victor Tan": "17B",
+    "Justin Foo": "17B",
     ####################################
     "Willie Quek": 18,
     "Fiona Quek": 18,
@@ -256,14 +256,14 @@ guest_table_map = {
     "Table 22": 22,
     "Table 23": 23,
     "Table 25": 25,
-    "Table 12A": "12a",
-    "Table 12B": "12b",
-    "Table 15A": "15a",
-    "Table 15B": "15b",
-    "Table 16A": "16a",
-    "Table 16B": "16b",
-    "Table 17A": "17a",
-    "Table 17B": "17b",
+    "Table 12A": "12A",
+    "Table 12B": "12B",
+    "Table 15A": "15A",
+    "Table 15B": "15B",
+    "Table 16A": "16A",
+    "Table 16B": "16B",
+    "Table 17A": "17A",
+    "Table 17B": "17B",
 
 }
 
@@ -287,14 +287,14 @@ table_positions = {
     10: (911, 1062),
 }
 rectangle_positions ={
-    "16a": (410, 569-34/2),
-    "17a": (680, 569-34/2),
-    "12a": (410, 901-34/2),
-    "15a": (680, 901-34/2),
-    "16b": (410, 569+32/2),
-    "17b": (680, 569+32/2),
-    "12b": (410, 901+32/2),
-    "15b": (680, 901+32/2),
+    "16A": (410, 569-34/2),
+    "17A": (680, 569-34/2),
+    "12A": (410, 901-34/2),
+    "15A": (680, 901-34/2),
+    "16B": (410, 569+32/2),
+    "17B": (680, 569+32/2),
+    "12B": (410, 901+32/2),
+    "15B": (680, 901+32/2),
 }
 
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
@@ -305,33 +305,35 @@ def load_bg_image():
 bg_image = load_bg_image()
 # ========== UI ==========
 st.title("Andrew and Sheryl 🥂✨🍾")
-selected_guest = st.selectbox("Enter your name to find your seat!", [name for name in guest_table_map])
+selected_guest = st.selectbox("Type your name to find your seat!", [name for name in guest_table_map])
 
 # ========== IMAGE DRAWING ==========
 if selected_guest:
     selected_table = guest_table_map[selected_guest]
-    
-    st.write(f"**Your table is now highlighted in yellow**")
-    st.write(f"{selected_guest} is seated at **[Table {selected_table}]** with:")
-    #print out all the guests at the selected table
-    guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
-    st.write(" || ".join(guests_at_table))
-    
-    # Draw over a copy of the image
-    img = bg_image.copy()
-    draw = ImageDraw.Draw(img)
+    if selected_table == 0:
+        st.image(bg_image)    
+    else:
+        st.subheader(f"Please find your table highlighted in yellow")
+        st.markdown(f"{selected_guest}, you are seated at <u>Table {selected_table}</u> with:", unsafe_allow_html=True)
+        #print out all the guests at the selected table
+        guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
+        st.write("|| "+" || ".join(guests_at_table)+" ||")
+        
+        # Draw over a copy of the image
+        img = bg_image.copy()
+        draw = ImageDraw.Draw(img)
 
-    for table_num, (x, y) in table_positions.items():
-        radius = 55
-        fill = "yellow" if table_num == selected_table else None
-        draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
+        for table_num, (x, y) in table_positions.items():
+            radius = 55
+            fill = "yellow" if table_num == selected_table else None
+            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
 
-    # Draw rectangles for rectangle positions
-    for table_num, (x, y) in rectangle_positions.items():
-        width, height = 270, 32.5
-        fill = "yellow" if table_num == selected_table else None
-        draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
+        # Draw rectangles for rectangle positions
+        for table_num, (x, y) in rectangle_positions.items():
+            width, height = 270, 32.5
+            fill = "yellow" if table_num == selected_table else None
+            draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
 
-    st.image(img)
+        st.image(img)
 else:
     st.image(bg_image)
