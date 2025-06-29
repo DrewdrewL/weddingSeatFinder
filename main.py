@@ -238,39 +238,71 @@ guest_table_map = {
     "Margaret Tan": 25,
     "Molly Goh": 25,
     "Roland Goh": 25,
+    "Table 1": 1,
+    "Table 2": 2,
+    "Table 3": 3,
+    "Table 5": 5,
+    "Table 6": 6,
+    "Table 7": 7,
+    "Table 8": 8,
+    "Table 9": 9,
+    "Table 10": 10,
+    "Table 11": 11,
+    "Table 15": 15,
+    "Table 16": 16,
+    "Table 17": 17,
+    "Table 18": 18,
+    "Table 19": 19,
+    "Table 20": 20,
+    "Table 21": 21,
+    "Table 22": 22,
+    "Table 23": 23,
+    "Table 25": 25,
+    "Table 12A": "12a",
+    "Table 12B": "12b",
+    "Table 15A": "15a",
+    "Table 15B": "15b",
+    "Table 16A": "16a",
+    "Table 16B": "16b",
+    "Table 17A": "17a",
+    "Table 17B": "17b",
 
 }
 
 table_positions = {
-    1: (130, 551),
-    6: (454, 403),
-    3: (227, 403),
-    5: (336, 225),
-    7: (564, 225),
-    9: (790, 225),
-    11: (1018, 225),
-    8: (680, 403),
-    10: (910, 403),
-    2: (130, 919),
-    19: (336, 1242),
-    21: (564, 1242),
-    23: (790, 1242),
-    20: (454, 1065),
-    18: (227, 1065),
-    22: (681, 1065),
-    25: (910, 1065),
+    2: (132, 551),
+    20: (455, 403),
+    18: (228, 403),
+    19: (338, 225),
+    21: (565, 225),
+    23: (791, 225),
+    11: (1019, 1240),
+    22: (681, 403),
+    25: (910, 403),
+    1: (132, 916),
+    5: (338, 1240),
+    7: (564, 1240),
+    9: (791, 1240),
+    6: (455, 1062),
+    3: (229, 1062),
+    8: (682, 1062),
+    10: (911, 1062),
 }
 rectangle_positions ={
-    12: (410, 569),
-    15: (680, 569),
-    16: (410, 901),
-    17: (680, 901),
+    "16a": (410, 569-34/2),
+    "17a": (680, 569-34/2),
+    "12a": (410, 901-34/2),
+    "15a": (680, 901-34/2),
+    "16b": (410, 569+32/2),
+    "17b": (680, 569+32/2),
+    "12b": (410, 901+32/2),
+    "15b": (680, 901+32/2),
 }
 
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
-    return Image.open("Floorplan8.png").convert("RGBA")
+    return Image.open("Floorplan9.png").convert("RGBA")
 
 bg_image = load_bg_image()
 # ========== UI ==========
@@ -279,30 +311,31 @@ selected_guest = st.selectbox("Enter your name to find your seat!", [name for na
 
 # ========== IMAGE DRAWING ==========
 if selected_guest:
-    selected_table = guest_table_map[selected_guest]
-    
-    st.write(f"**Your table is now highlighted in yellow**")
-    st.write(f"{selected_guest} is seated at **[Table {selected_table}]** with:")
-    #print out all the guests at the selected table
-    guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
-    st.write(" || ".join(guests_at_table))
-    
-    # Draw over a copy of the image
-    img = bg_image.copy()
-    draw = ImageDraw.Draw(img)
+    with st.spinner("Checking..."):
+        selected_table = guest_table_map[selected_guest]
+        
+        st.write(f"**Your table is now highlighted in yellow**")
+        st.write(f"{selected_guest} is seated at **[Table {selected_table}]** with:")
+        #print out all the guests at the selected table
+        guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
+        st.write(" || ".join(guests_at_table))
+        
+        # Draw over a copy of the image
+        img = bg_image.copy()
+        draw = ImageDraw.Draw(img)
 
-    # Draw all tables
-    for table_num, (x, y) in table_positions.items():
-        radius = 55
-        fill = "yellow" if table_num == selected_table else None
-        draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
+        # Draw all tables
+        for table_num, (x, y) in table_positions.items():
+            radius = 55
+            fill = "yellow" if table_num == selected_table else None
+            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="red")
 
-    # Draw rectangles for rectangle positions
-    for table_num, (x, y) in rectangle_positions.items():
-        width, height = 270, 65
-        fill = "yellow" if table_num == selected_table else None
-        draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
+        # Draw rectangles for rectangle positions
+        for table_num, (x, y) in rectangle_positions.items():
+            width, height = 270, 32.5
+            fill = "yellow" if table_num == selected_table else None
+            draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="red")
 
-    st.image(img)
+        st.image(img)
 else:
     st.image(bg_image)
