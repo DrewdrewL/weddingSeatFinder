@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 # ========== CONFIG ==========
 
 guest_table_map = {
-    "-" : 0,
+    "" : 0,
     ####################################
     "Aldrin Lee": 1,
     "Audrey Chan": 1,
@@ -301,7 +301,7 @@ font = ImageFont.truetype("ARIALBD.TTF", 50)
 #bg_image = Image.open("Floorplan8.png").convert("RGBA")  
 @st.cache_resource
 def load_bg_image():
-    return Image.open("Floorplan9.png").convert("RGBA")
+    return Image.open("Floorplan10.png").convert("RGBA")
 
 bg_image = load_bg_image()
 # ========== UI ==========
@@ -329,7 +329,6 @@ if selected_guest:
             fill = "#FFD700" if table_num == selected_table else None
             width = 2 if table_num == selected_table else 0
             draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="black",width=width)
-            #load arial.ttf font size 50
             
             if isinstance(table_num, int) and table_num == selected_table and table_num >= 10:
                 draw.text((x - radius + 25, y - radius + 25), str(table_num), fill="black", font=font) 
@@ -340,7 +339,7 @@ if selected_guest:
 
         # Draw rectangles for rectangle positions
         for table_num, (x, y) in rectangle_positions.items():
-            width, height = 270, 32.5
+            width, height = 270, 34
             fill = "#FFD700" if table_num == selected_table else None
             draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="white")
 
