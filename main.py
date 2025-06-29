@@ -4,7 +4,6 @@ from PIL import Image, ImageDraw, ImageFont
 # ========== CONFIG ==========
 
 guest_table_map = {
-    "" : 0,
     ####################################
     "Aldrin Lee": 1,
     "Audrey Chan": 1,
@@ -307,43 +306,44 @@ def load_bg_image():
 bg_image = load_bg_image()
 # ========== UI ==========
 st.title("Andrew and Sheryl 🥂✨🍾")
-selected_guest = st.selectbox("Type your name to find your seat!", [name for name in guest_table_map])
-
+selected_guest = st.selectbox("Type your name to find your seat!", [name for name in guest_table_map],index=None)
 # ========== IMAGE DRAWING ==========
 if selected_guest:
-    selected_table = guest_table_map[selected_guest]
-    if selected_table == 0:
-        st.image(bg_image)    
-    else:
-        st.subheader(f"Please find your table highlighted in yellow")
-        st.markdown(f"{selected_guest}, you are seated at <u>**Table {selected_table}**</u> with:", unsafe_allow_html=True)
-        #print out all the guests at the selected table
-        guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
-        st.write("|| "+" || ".join(guests_at_table)+" ||")
-        
-        # Draw over a copy of the image
-        img = bg_image.copy()
-        draw = ImageDraw.Draw(img)
-
-        for table_num, (x, y) in table_positions.items():
-            radius = 55
-            fill = "#FFD700" if table_num == selected_table else None
-            width = 2 if table_num == selected_table else 0
-            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="black",width=width)
+    with st.spinner("Loading Seat..."):
+        selected_table = guest_table_map[selected_guest]
+        if selected_table == 0:
+            st.image(bg_image)    
+        else:
+            st.subheader(f"Please find your table highlighted in yellow")
+            st.markdown(f"{selected_guest}, you are seated at <u>**Table {selected_table}**</u> with:", unsafe_allow_html=True)
+            #print out all the guests at the selected table
+            guests_at_table = [name for name, table in guest_table_map.items() if table == selected_table]
+            st.write("|| "+" || ".join(guests_at_table)+" ||")
             
-            if isinstance(table_num, int) and table_num == selected_table and table_num >= 10:
-                draw.text((x - radius + 25, y - radius + 25), str(table_num), fill="black", font=font) 
-            elif isinstance(table_num, int) and table_num == selected_table and table_num < 10:
-                draw.text((x - radius + 40, y - radius + 25), str(table_num), fill="black", font=font)
-            else:
-                pass
+            # Draw over a copy of the image
+            img = bg_image.copy()
+            draw = ImageDraw.Draw(img)
 
-        # Draw rectangles for rectangle positions
-        for table_num, (x, y) in rectangle_positions.items():
-            width, height = 270, 34
-            fill = "#FFD700" if table_num == selected_table else None
-            draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="white")
+            for table_num, (x, y) in table_positions.items():
+                radius = 55
+                fill = "#FFD700" if table_num == selected_table else None
+                width = 2 if table_num == selected_table else 0
+                draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=fill, outline="black",width=width)
+                
+                if isinstance(table_num, int) and table_num == selected_table and table_num >= 10:
+                    draw.text((x - radius + 25, y - radius + 25), str(table_num), fill="black", font=font) 
+                elif isinstance(table_num, int) and table_num == selected_table and table_num < 10:
+                    draw.text((x - radius + 40, y - radius + 25), str(table_num), fill="black", font=font)
+                else:
+                    pass
 
-        st.image(img)
+            # Draw rectangles for rectangle positions
+            for table_num, (x, y) in rectangle_positions.items():
+                width, height = 270, 34
+                fill = "#FFD700" if table_num == selected_table else None
+                draw.rectangle((x - width // 2, y - height // 2, x + width // 2, y + height // 2), fill=fill, outline="white")
+
+            st.image(img)
+
 else:
     st.image(bg_image)
