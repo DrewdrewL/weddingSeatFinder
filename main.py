@@ -27,16 +27,6 @@ guest_table_map = {
     "Mark Tin": 2,
     "Elaine Chua": 2,
     ####################################
-    "Elvin Lee": 11,
-    "Katherine Heng": 11,
-    "Natalie Lee": 11,
-    "Nicole Lee": 11,
-    "Nellie Lee": 11,
-    "Megan Lee": 11,
-    "Alwin Lee": 11,
-    "Mavis Chan": 11,
-    "Serene Lee": 11,
-    ####################################
     "Casey Chan": 3,
     "Sandra Chan": 3,
     "Marc Chan": 3,
@@ -46,6 +36,16 @@ guest_table_map = {
     "Colin Chan": 3,
     "Luan Hua Chan": 3,
     "Collette Chan": 3,
+    ####################################
+    "Elvin Lee": 11,
+    "Katherine Heng": 11,
+    "Natalie Lee": 11,
+    "Nicole Lee": 11,
+    "Nellie Lee": 11,
+    "Megan Lee": 11,
+    "Alwin Lee": 11,
+    "Mavis Chan": 11,
+    "Serene Lee": 11,
     ####################################
     "Palvin Chan": 10,
     "Melynda Cheng": 10,
@@ -264,6 +264,7 @@ guest_table_map = {
     "Table 16B": "16B",
     "Table 17A": "17A",
     "Table 17B": "17B",
+    "Don't click me": 0
 
 }
 
@@ -312,7 +313,8 @@ if selected_guest:
     with st.spinner("Loading Seat..."):
         selected_table = guest_table_map[selected_guest]
         if selected_table == 0:
-            st.image(bg_image)    
+            st.subheader("Do you feel good for clicking?")
+            st.image(Image.open("EasterEgg.png").convert("RGBA"))    
         else:
             st.subheader(f"Please find your table highlighted in yellow")
             st.markdown(f"{selected_guest}, you are seated at <u>**Table {selected_table}**</u> with:", unsafe_allow_html=True)
