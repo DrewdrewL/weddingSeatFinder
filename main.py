@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 
 # ========== CONFIG ==========
-
+st.set_page_config(page_title="Seat Locator", page_icon="🥂") 
 guest_table_map = {
     ####################################
     "Aldrin Lee": 1,
