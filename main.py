@@ -313,7 +313,7 @@ if selected_guest:
     with st.spinner("Loading Seat..."):
         selected_table = guest_table_map[selected_guest]
         if selected_table == 0:
-            st.subheader("Do you feel good for clicking?")
+            st.subheader("I said... Don't click.")
             st.image(Image.open("EasterEgg.png").convert("RGBA"))    
         else:
             st.subheader(f"Please find your table highlighted in yellow")
