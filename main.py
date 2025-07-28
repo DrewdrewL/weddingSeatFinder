@@ -65,7 +65,6 @@ guest_table_map = {
     "Matthew Lee": 5,
     "Nicholas Lee": 5,
     "Han Mian Hwee": 5,
-    "Lee Choo": 5,
     ####################################
     "Mr Teh": 9,
     "Mrs Teh": 9,
