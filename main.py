@@ -84,7 +84,7 @@ guest_table_map = {
     "Chermane Goh": 8,
     "Fonzarelli Ong": 8,
     "Joyce Skidell": 8,
-    "Min Siang Loy": 8,
+    "Min Siang Loy": 7,
     "Jin Hong Ng": 8,
     "Jit Yong Ang": 8,
     "Ivy Wang": 8,
@@ -99,7 +99,7 @@ guest_table_map = {
     "Benjamin Ang": 8,
     "Yue Ern Lee": 7,
     "Wayne Toh": 7,
-    "Jonathan Raharja": 7,
+    "Jonathan Jonathan": 7,
     "BJP":7,
     ####################################
     "Susan Phang": 6,
